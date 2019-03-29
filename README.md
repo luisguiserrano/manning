@@ -1,2 +1,2 @@
-# manning
-This is the repo for the book "A Friendly Introduction to Machine Learning"
+# Manning Book Repository
+This is the repo for the book "Grokking Machine Learning"
