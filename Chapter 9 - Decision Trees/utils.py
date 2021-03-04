@@ -9,19 +9,19 @@ def plot_points(features, labels):
     ham = X[np.argwhere(y==0)]
     pyplot.scatter([s[0][0] for s in spam],
                 [s[0][1] for s in spam],
-                s = 25,
+                s = 100,
                 color = 'cyan',
                 edgecolor = 'k',
                 marker = '^')
     pyplot.scatter([s[0][0] for s in ham],
                 [s[0][1] for s in ham],
-                s = 25,
+                s = 100,
                 color = 'red',
                 edgecolor = 'k',
                 marker = 's')
-    pyplot.xlabel('Sale')
-    pyplot.ylabel('Lottery')
-    pyplot.legend(['spam','ham'])
+    #pyplot.xlabel('GRE')
+    #pyplot.ylabel('TOEFL')
+    #pyplot.legend(['Admitted','Not admitted'])
 
 def plot_model(X, y, model):
     X = np.array(X)
@@ -38,3 +38,15 @@ def plot_model(X, y, model):
     pyplot.contour(xx, yy, Z,colors = 'k',linewidths = 1)
     plot_points(X, y)
     pyplot.show()
+    
+def display_tree(dt):
+    from sklearn.externals.six import StringIO  
+    from IPython.display import Image  
+    from sklearn.tree import export_graphviz
+    import pydotplus
+    dot_data = StringIO()
+    export_graphviz(dt, out_file=dot_data,  
+                    filled=True, rounded=True,
+                    special_characters=True)
+    graph = pydotplus.graph_from_dot_data(dot_data.getvalue())  
+    return Image(graph.create_png())
