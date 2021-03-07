@@ -2,20 +2,20 @@ import numpy as np
 from matplotlib import pyplot
 
 # Some functions to plot our points and draw the models
-def plot_points(features, labels):
+def plot_points(features, labels, size_of_points=100):
     X = np.array(features)
     y = np.array(labels)
     spam = X[np.argwhere(y==1)]
     ham = X[np.argwhere(y==0)]
     pyplot.scatter([s[0][0] for s in spam],
                 [s[0][1] for s in spam],
-                s = 100,
+                s = size_of_points,
                 color = 'cyan',
                 edgecolor = 'k',
                 marker = '^')
     pyplot.scatter([s[0][0] for s in ham],
                 [s[0][1] for s in ham],
-                s = 100,
+                s = size_of_points,
                 color = 'red',
                 edgecolor = 'k',
                 marker = 's')
@@ -23,7 +23,7 @@ def plot_points(features, labels):
     #pyplot.ylabel('TOEFL')
     #pyplot.legend(['Admitted','Not admitted'])
 
-def plot_model(X, y, model):
+def plot_model(X, y, model, size_of_points=100):
     X = np.array(X)
     y = np.array(y)
     plot_step = 0.2
@@ -36,7 +36,7 @@ def plot_model(X, y, model):
     print(Z)
     pyplot.contourf(xx, yy, Z, colors=['red', 'blue'], alpha=0.2, levels=range(-1,2))
     pyplot.contour(xx, yy, Z,colors = 'k',linewidths = 1)
-    plot_points(X, y)
+    plot_points(X, y, size_of_points)
     pyplot.show()
     
 def display_tree(dt):
