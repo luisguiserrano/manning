@@ -3,20 +3,20 @@ import numpy as np
 from matplotlib import pyplot
 
 # Some functions to plot our points and draw the lines
-def plot_points(features, labels):
+def plot_points(features, labels, point_size=25):
     X = np.array(features)
     y = np.array(labels)
     spam = X[np.argwhere(y==1)]
     ham = X[np.argwhere(y==0)]
     pyplot.scatter([s[0][0] for s in spam],
                 [s[0][1] for s in spam],
-                s = 25,
+                s = point_size,
                 color = 'cyan',
                 edgecolor = 'k',
                 marker = '^')
     pyplot.scatter([s[0][0] for s in ham],
                 [s[0][1] for s in ham],
-                s = 25,
+                s = point_size,
                 color = 'red',
                 edgecolor = 'k',
                 marker = 's')
