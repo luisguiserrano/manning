@@ -12,13 +12,13 @@ def plot_points(features, labels, fix_margins=True):
         pyplot.ylim(0, 11)
     pyplot.scatter([s[0][0] for s in spam],
                 [s[0][1] for s in spam],
-                s = 25,
+                s = 100,
                 color = 'cyan',
                 edgecolor = 'k',
                 marker = '^')
     pyplot.scatter([s[0][0] for s in ham],
                 [s[0][1] for s in ham],
-                s = 25,
+                s = 100,
                 color = 'red',
                 edgecolor = 'k',
                 marker = 's')
