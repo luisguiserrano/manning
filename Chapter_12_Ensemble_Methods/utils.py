@@ -29,7 +29,8 @@ def plot_points(features, labels, fix_margins=True):
 def plot_model(X, y, model, fix_margins=True):
     X = np.array(X)
     y = np.array(y)
-    plot_step = 0.2
+    plot_points(X, y)
+    plot_step = 0.01
     x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
     y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
     if fix_margins:
@@ -42,10 +43,21 @@ def plot_model(X, y, model, fix_margins=True):
     Z = model.predict(np.c_[xx.ravel(), yy.ravel()])
     Z = Z.reshape(xx.shape)
     pyplot.contourf(xx, yy, Z, colors=['red', 'blue'], alpha=0.2, levels=range(-1,2))
-    pyplot.contour(xx, yy, Z,colors = 'k',linewidths = 1)
-    plot_points(X, y)
+    pyplot.contour(xx, yy, Z,colors = 'k',linewidths = 3)
     pyplot.show()
 
+def display_tree(dt):
+    from sklearn.externals.six import StringIO  
+    from IPython.display import Image  
+    from sklearn.tree import export_graphviz
+    import pydotplus
+    dot_data = StringIO()
+    export_graphviz(dt, out_file=dot_data,  
+                    filled=False, rounded=True,
+                    special_characters=True)
+    graph = pydotplus.graph_from_dot_data(dot_data.getvalue())  
+    return Image(graph.create_png())
+    
 def plot_trees(model):
     estimators = gradient_boosting_model.estimators_
     for i in range(len(estimators)):

@@ -50,3 +50,11 @@ def display_tree(dt):
                     special_characters=True)
     graph = pydotplus.graph_from_dot_data(dot_data.getvalue())  
     return Image(graph.create_png())
+
+def plot_regressor(model, features, labels):
+    x = np.linspace(0,85,1000)
+    pyplot.scatter(features, labels)
+    pyplot.plot(x, model.predict(x.reshape([-1,1])))
+    pyplot.xlabel("Age")
+    pyplot.ylabel("Days per week")
+    pyplot.show()
