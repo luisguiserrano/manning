@@ -64,3 +64,11 @@ def plot_trees(model):
         tree.plot_tree(estimators[i][0])
         pyplot.show()
         #plot_model(new_X, new_y, estimators[i][0])
+        
+def plot_regressor(model, features, labels):
+    x = np.linspace(0,85,1000)
+    pyplot.scatter(features, labels)
+    pyplot.plot(x, model.predict(x.reshape([-1,1])))
+    pyplot.xlabel("Age")
+    pyplot.ylabel("Days per week")
+    pyplot.show()
