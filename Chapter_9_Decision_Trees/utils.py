@@ -33,7 +33,6 @@ def plot_model(X, y, model, size_of_points=100):
                          np.arange(y_min, y_max, plot_step))
     Z = model.predict(np.c_[xx.ravel(), yy.ravel()])
     Z = Z.reshape(xx.shape)
-    print(Z)
     pyplot.contourf(xx, yy, Z, colors=['red', 'blue'], alpha=0.2, levels=range(-1,2))
     pyplot.contour(xx, yy, Z,colors = 'k',linewidths = 1)
     plot_points(X, y, size_of_points)
@@ -46,7 +45,7 @@ def display_tree(dt):
     import pydotplus
     dot_data = StringIO()
     export_graphviz(dt, out_file=dot_data,  
-                    filled=True, rounded=True,
+                    filled=False, rounded=True,
                     special_characters=True)
     graph = pydotplus.graph_from_dot_data(dot_data.getvalue())  
     return Image(graph.create_png())
