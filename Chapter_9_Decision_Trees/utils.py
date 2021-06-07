@@ -45,7 +45,7 @@ def display_tree(dt):
     import pydotplus
     dot_data = StringIO()
     export_graphviz(dt, out_file=dot_data,  
-                    filled=False, rounded=True,
+                    filled=True, rounded=True,
                     special_characters=True)
     graph = pydotplus.graph_from_dot_data(dot_data.getvalue())  
     return Image(graph.create_png())
