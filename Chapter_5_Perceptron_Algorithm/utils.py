@@ -24,7 +24,7 @@ def plot_points(features, labels):
     pyplot.ylabel('beep')
     pyplot.legend(['happy','sad'])
     
-def draw_line(a,b,c, color='black', linewidth=2.0, linestyle='solid', starting=0, ending=3):
+def draw_line(a,b,c, starting=0, ending=3, **kwargs):
     # Plotting the line ax + by + c = 0
     x = np.linspace(starting, ending, 1000)
-    pyplot.plot(x, -c/b - a*x/b, linestyle=linestyle, color=color, linewidth=linewidth)
+    pyplot.plot(x, -c/b - a*x/b, **kwargs)
