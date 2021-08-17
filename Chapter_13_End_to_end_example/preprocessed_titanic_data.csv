@@ -1,4 +1,4 @@
-Survived,SibSp,Parch,Fare,Sex_female,Sex_male,Pclass_C,Pclass_Q,Pclass_S,Pclass_U,Pclass_1,Pclass_2,Pclass_3,"Categorized_age_(0, 10]","Categorized_age_(10, 20]","Categorized_age_(20, 30]","Categorized_age_(30, 40]","Categorized_age_(40, 50]","Categorized_age_(50, 60]","Categorized_age_(60, 70]","Categorized_age_(70, 80]"
+Survived,SibSp,Parch,Fare,Sex_female,Sex_male,Embarked_C,Embarked_Q,Embarked_S,Embarked_U,Pclass_1,Pclass_2,Pclass_3,"Categorized_age_(0, 10]","Categorized_age_(10, 20]","Categorized_age_(20, 30]","Categorized_age_(30, 40]","Categorized_age_(40, 50]","Categorized_age_(50, 60]","Categorized_age_(60, 70]","Categorized_age_(70, 80]"
 0,1,0,7.25,0,1,0,0,1,0,0,0,1,0,0,1,0,0,0,0,0
 1,1,0,71.2833,1,0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0
 1,0,0,7.925,1,0,0,0,1,0,0,0,1,0,0,1,0,0,0,0,0
