@@ -38,7 +38,11 @@ def sigmoid(x):
     exponential = numpy.exp(x)
     denom = numpy.add(1, exponential)
 
-    return numpy.divide(exponential, denom)
+    result = numpy.divide(exponential, denom)
+    result = numpy.minimum(result, 0.9999)  # Set upper bound
+    result = numpy.maximum(result, 0.0001)  # Set lower bound
+    
+    return result
 
 def calculate_score(array_weights, bias, array_feature):
     inner_product = numpy.dot(array_weights, array_feature)
@@ -56,14 +60,16 @@ def log_loss(array_weights, bias, array_feature, label):
     """
     prediction = calculate_prediction(array_weights, bias, array_feature)
 
-    first_term = numpy.multiply(
-        -label,
-        numpy.log(prediction))
-    second_term = numpy.multiply(
+    term1 = numpy.multiply(
+        label,
+        numpy.log(prediction)
+        )
+    term2 = numpy.multiply(
         numpy.subtract(1, label),
-        numpy.log(numpy.subtract(1, prediction)))
+        numpy.log(numpy.subtract(1, prediction))
+        )
 
-    return numpy.subtract(first_term, second_term)
+    return -1*numpy.add(term1, term2)
 
 def total_log_loss(array_weights, bias, array_features, array_labels):
     """
@@ -146,7 +152,7 @@ def logistic_regression_algorithm(array_features, array_labels, learning_rate = 
             array_weights, bias, array_features, array_labels)
 
         # Identifies best weights
-        if error < iter_errors[-1]:
+        if error < min(iter_errors):
             best_weights = array_weights
             best_bias = bias
         iter_errors.append(error)
