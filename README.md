@@ -1,6 +1,8 @@
 # Grokking Machine Learning Book Repository
 This is the repo for the book "Grokking Machine Learning", available [here](https://www.manning.com/books/grokking-machine-learning).
 
+![image](GML.jpeg)
+
 Get it with a 40% discount code: **serranopc**
 
 ### Chapters:
