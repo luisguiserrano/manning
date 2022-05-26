@@ -240,7 +240,7 @@ tqdm==4.42.1
 traitlets==4.3.3
 turicreate==6.2.2
 typing-extensions==3.7.4.3
-ujson==1.35
+ujson==5.2.0
 unicodecsv==0.14.1
 urllib3==1.25.8
 watchdog==0.10.2
