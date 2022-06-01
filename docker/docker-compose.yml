@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  grokking-ml46:
+    build: ./jupyter
+    container_name: grokking-ml46
+    ports:
+      - "8888:8888"
