@@ -47,7 +47,7 @@ def plot_model(X, y, model, fix_margins=True):
     pyplot.show()
 
 def display_tree(dt):
-    from sklearn.externals.six import StringIO  
+    from six import StringIO  
     from IPython.display import Image  
     from sklearn.tree import export_graphviz
     import pydotplus
