@@ -1,0 +1,11 @@
+numpy
+pandas
+matplotlib
+turicreate
+jupyter
+jupyterlab
+jupyterlab-server
+Keras-Preprocessing
+scikit-image
+scikit-learn
+tensorflow
