@@ -7,6 +7,6 @@ Get it with a 40% discount code: **serranopc**
 
 | Lab | Description | Open in Google Colab |
 |-----|-------------|----------------------|
-| `End_to_end_example.ipynb.ipynb` | End to end example with the Titanic dataset | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/luisguiserrano/manning/blob/master/Chapter_13_End_to_end_example/End_to_end_example.ipynb) |
+| `End_to_end_example.ipynb` | End to end example with the Titanic dataset | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/luisguiserrano/manning/blob/master/Chapter_13_End_to_end_example/End_to_end_example.ipynb) |
 
 > ✅ *Tip:* Click any “Open in Colab” button to launch the lab in Google Colab. From there, you can run the notebook in the cloud, make edits, and save your changes back to your own Drive.
